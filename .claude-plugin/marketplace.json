@@ -1,0 +1,28 @@
+{
+  "name": "keolaj-plugins",
+  "owner": {
+    "name": "Keola"
+  },
+  "plugins": [
+    {
+      "name": "csharp-lsp",
+      "description": "C# language server that serves the calling session's own folder, worktrees included",
+      "version": "1.1.0",
+      "author": {
+        "name": "Keola"
+      },
+      "source": "./plugins/csharp-lsp",
+      "category": "development",
+      "strict": false,
+      "lspServers": {
+        "csharp-ls": {
+          "command": "python",
+          "args": ["-I", "${CLAUDE_PLUGIN_ROOT}/csharp-ls-launcher.py"],
+          "extensionToLanguage": {
+            ".cs": "csharp"
+          }
+        }
+      }
+    }
+  ]
+}
